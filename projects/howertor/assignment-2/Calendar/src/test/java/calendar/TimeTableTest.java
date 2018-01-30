@@ -138,6 +138,8 @@ public class TimeTableTest {
 				startYear ,
 				title,
 				description);
+		int[] recurDays1 = {4};
+		appt.setRecurrence(recurDays1, Appt.RECUR_BY_YEARLY, 1, Appt.RECUR_NUMBER_FOREVER);
 		listAppts.add(appt);
 
 		startHour=14;
@@ -155,6 +157,8 @@ public class TimeTableTest {
 				startYear ,
 				title,
 				description);
+		int[] recurDays2 = {1,3,5};
+		appt.setRecurrence(recurDays2, Appt.RECUR_BY_WEEKLY, 1, 8);
 		listAppts.add(appt);
 
 		startHour=13;
@@ -184,11 +188,12 @@ public class TimeTableTest {
 		//get list of appointments in range today and tomorrow
 		calDays = timeTable.getApptRange(listAppts, today, tomorrow);
 		assertNotNull(calDays);
-		//delete appointment 3
-		LinkedList<Appt> listDeletedAppts=timeTable.deleteAppt(listAppts, listAppts.get(2));
+		//test permutation
+		int[] pv = {2, 0, 1};
+		LinkedList<Appt> permuted=timeTable.permute(listAppts, pv);
+		assertNotNull(permuted);
+		//delete new appointment 2
+		LinkedList<Appt> listDeletedAppts=timeTable.deleteAppt(listAppts, listAppts.get(1));
 		assertNotNull(listDeletedAppts);
-		//there should now be two appointments between today and tomorrow
-
 	}
-//add more unit tests as you needed
 }
