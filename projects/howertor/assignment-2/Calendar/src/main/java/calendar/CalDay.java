@@ -110,10 +110,10 @@ public class CalDay {
 	
 	/** Sets appts */
 	private void setAppts(LinkedList<Appt> appts) {
-		if(appts!=null)
+		if(appts==null)
 				this.appts = appts;
 		
-		if(appts!=null&&appts.size()==0)
+		if(appts==null&&appts.size()==0)
 			this.appts = appts;
 	}
 	
@@ -179,7 +179,7 @@ public class CalDay {
 		         sb.append(element + " ");
 		      }
 		  
-			//sb.append(this.appts);
+			sb.append(this.appts);
 			sb.append("\n");
 		}
        	 return sb.toString();
