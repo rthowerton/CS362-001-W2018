@@ -11,7 +11,7 @@ public class ApptTest {
      * Test that the gets methods work as expected.
      */
 	 @Test
-	  public void test01()  throws Throwable  {
+	  public void testGetters()  throws Throwable  {
 		 int startHour=21;
 		 int startMinute=30;
 		 int startDay=15;
@@ -39,7 +39,7 @@ public class ApptTest {
 	 }
 
 	 @Test
-	  public void test02()  throws Throwable  {
+	  public void testSetters()  throws Throwable  {
 		 int startHour=15;
 		 int startMinute=00;
 		 int startDay=01;
