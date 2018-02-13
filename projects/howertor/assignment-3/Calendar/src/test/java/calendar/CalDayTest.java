@@ -18,6 +18,9 @@ public class CalDayTest {
 	  public void testDefaultConstructor()  throws Throwable  {
 		CalDay day = new CalDay();
 		assertFalse(day.isValid());
+
+		//null iterator
+		assertNull(day.iterator());
 	 }
 	 @Test
 	  public void testNullList()  throws Throwable  {
@@ -34,6 +37,7 @@ public class CalDayTest {
 		GregorianCalendar badDay = new GregorianCalendar(thisYear, thisMonth, thisDay);
 		CalDay day = new CalDay(badDay);
 		assertEquals(0, day.getSizeAppts());
+		assertNotNull(day.iterator());
 	 }
 
 	 @Test
@@ -155,7 +159,8 @@ public class CalDayTest {
 		 assertEquals("\t --- 2/19/2018 --- \n" +
 				 " --- -------- Appointments ------------ --- \n" +
 				 "\t2/19/2018 at 6:0pm ,Club meeting, Club meets at this time.\n" +
-				 " \t2/19/2018 at 7:0pm ,Birthday Party, This is my birthday party.\n \n", day.toString());
+				 " \t2/19/2018 at 7:0pm ,Birthday Party, This is my birthday party.\n" +
+				 " \n", day.toString());
 	 }
 //add more unit tests as you needed	
 }
