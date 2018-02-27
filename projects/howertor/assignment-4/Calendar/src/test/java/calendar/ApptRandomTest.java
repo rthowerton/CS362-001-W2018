@@ -51,7 +51,7 @@ public class ApptRandomTest {
      * Generate Random Tests that tests Appt Class.
      */
 	 @Test
-	  public void radnomtest()  throws Throwable  {
+	  public void randomApptTest()  throws Throwable  {
 
 		 long startTime = Calendar.getInstance().getTimeInMillis();
 		 long elapsed = Calendar.getInstance().getTimeInMillis() - startTime;
@@ -64,15 +64,15 @@ public class ApptRandomTest {
 				long randomseed =System.currentTimeMillis(); //10
 	//			System.out.println(" Seed:"+randomseed );
 				Random random = new Random(randomseed);
-				
+
 				 int startHour=ValuesGenerator.RandInt(random);
 				 int startMinute=ValuesGenerator.RandInt(random);
-				 int startDay=ValuesGenerator.RandInt(random);;
+				 int startDay=ValuesGenerator.RandInt(random);
 				 int startMonth=ValuesGenerator.getRandomIntBetween(random, 1, 11);
 				 int startYear=ValuesGenerator.RandInt(random);
 				 String title="Birthday Party";
 				 String description="This is my birthday party.";
-				 //Construct a new Appointment object with the initial data	 
+				 //Construct a new Appointment object with the initial data
 				 Appt appt = new Appt(startHour,
 				          startMinute ,
 				          startDay ,
@@ -82,6 +82,15 @@ public class ApptRandomTest {
 				         description);
 			 if(!appt.getValid())continue;
 			for (int i = 0; i < NUM_TESTS; i++) {
+				int changedHour=ValuesGenerator.getRandomIntBetween(random, -1, 24);
+				int changedMinute=ValuesGenerator.getRandomIntBetween(random, -1, 60);
+				int changedDay=ValuesGenerator.getRandomIntBetween(random, 0, 32);
+				//int changedMonth=ValuesGenerator.getRandomIntBetween(random, 0, 12);
+				//test isValid
+				appt.setStartHour(changedHour);
+				appt.setStartMinute(changedMinute);
+				appt.setStartDay(changedDay);
+
 					String methodName = ApptRandomTest.RandomSelectMethod(random);
 					   if (methodName.equals("setTitle")){
 						   String newTitle=(String) ValuesGenerator.getString(random);
@@ -94,6 +103,7 @@ public class ApptRandomTest {
 						   int recurIncrement = ValuesGenerator.RandInt(random);
 						   int recurNumber=ApptRandomTest.RandomSelectRecurForEverNever(random);
 						   appt.setRecurrence(recurDays, recur, recurIncrement, recurNumber);
+						   appt.setRecurrence(null, recur, recurIncrement, recurNumber);
 						}				
 				}
 				
