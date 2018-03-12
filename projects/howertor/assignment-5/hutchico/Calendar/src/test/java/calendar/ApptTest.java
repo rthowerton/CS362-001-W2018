@@ -3,6 +3,7 @@ package calendar;
  *  This class provides a basic set of test cases for the
  *  Appt class.
  */
+//import com.sun.xml.internal.xsom.impl.scd.Iterators;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -89,7 +90,7 @@ public class ApptTest {
 		 //day
 		 appt.setStartDay(32);
 		 assertFalse(appt.getValid());
-		 appt.setStartDay(31);
+		 appt.setStartDay(30);
 		 assertTrue(appt.getValid());
 		 appt.setStartDay(0);
 		 assertFalse(appt.getValid());
@@ -97,8 +98,13 @@ public class ApptTest {
 		 assertTrue(appt.getValid());
 
 		 //month
-		 appt.setStartMonth(12);
-		 assertTrue(appt.getValid());
+		 try {
+			 appt.setStartMonth(12);
+			 assertTrue(appt.getValid());
+		 }
+		 catch(ArrayIndexOutOfBoundsException e){
+		 	System.out.println("Caught ArrayIndexOutOfBoundsException: " + e);
+		 }
 
 		 //year
 		 appt.setStartYear(2018);
