@@ -1,0 +1,8 @@
+1. In line 113 of Appt.java, isValid() method, removed -1 from int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth);
+   This causes isValid to reference DaysInMonth incorrectly, unable to reach January and going out of bounds with a value of 12.
+
+2. In line 282 of Appt.java, represntationApp() method, changed if(printableHour > 11) to if(printableHour < 11).
+   This causes represntationApp to subtract 12 from the hour if the time is less than 11, leaving all numbers greater than 11 as is (essentially printing all times incorrectly).
+
+3. In line 53 of TimeTable.java, getApptRange() method, changed for (int i = 0; i < appts.size(); i++) to for (int i = 1; i < appts.size(); i++).
+   This causes getApptRange to ignore the first appointment in the list of appointments whenever called.
