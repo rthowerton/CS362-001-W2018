@@ -3,8 +3,6 @@ package finalprojectB;
 
 import junit.framework.TestCase;
 
-import java.net.URL;
-
 //You can use this as a skeleton for your 3 different test approach
 //It is an optional to use this file, you can generate your own test file(s) to test the target function!
 // Again, it is up to you to use this file or not!
@@ -26,7 +24,7 @@ public class UrlValidatorTest extends TestCase {
    {
 //You can use this function to implement your manual testing	   
       UrlValidator urlVal = new UrlValidator();
-      assertTrue(urlVal.isValid("https://www.google.com/~howertor"));
+      assertTrue(urlVal.isValid("https://www.google.com/"));
       assertFalse(urlVal.isValid("www.google.com"));
       assertTrue(urlVal.isValid("https://mail.google.com"));
       assertTrue(urlVal.isValid("https://google.com"));
