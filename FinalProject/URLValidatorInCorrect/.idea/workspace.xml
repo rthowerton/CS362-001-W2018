@@ -15,9 +15,11 @@
       <file leaf-file-name="UrlValidatorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/finalprojectB/UrlValidatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-924">
-              <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="1995">
+              <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,6 +56,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>regexValidator</find>
@@ -68,6 +77,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/test/java/finalprojectB/temp.java" />
         <option value="$PROJECT_DIR$/src/test/java/finalprojectB/UrlValidatorTest.java" />
       </list>
     </option>
@@ -343,9 +353,6 @@
     <history-entry file="UrlValidatorTest - 2018.03.19 at 22h 19m 09s.xml">
       <configuration name="UrlValidatorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UrlValidatorTest_testManualTest - 2018.03.19 at 21h 35m 43s.xml">
-      <configuration name="UrlValidatorTest.testManualTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UrlValidatorTest_testManualTest - 2018.03.19 at 21h 37m 34s.xml">
       <configuration name="UrlValidatorTest.testManualTest" configurationId="JUnit" />
     </history-entry>
@@ -356,6 +363,9 @@
       <configuration name="UrlValidatorTest.testManualTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UrlValidatorTest_testManualTest - 2018.03.19 at 22h 27m 35s.xml">
+      <configuration name="UrlValidatorTest.testManualTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UrlValidatorTest_testManualTest - 2018.03.19 at 23h 07m 24s.xml">
       <configuration name="UrlValidatorTest.testManualTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -449,11 +459,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/finalprojectB/temp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="118" column="43" lean-forward="true" selection-start-line="118" selection-start-column="43" selection-end-line="118" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/finalprojectB/UrlValidatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-924">
-          <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-          <folding />
+        <state relative-caret-position="1995">
+          <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

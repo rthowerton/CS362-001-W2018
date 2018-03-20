@@ -1,8 +1,9 @@
 
 package finalprojectB;
 
-import junit.framework.TestCase;
 
+import junit.framework.TestCase;
+import java.util.Random;
 //You can use this as a skeleton for your 3 different test approach
 //It is an optional to use this file, you can generate your own test file(s) to test the target function!
 // Again, it is up to you to use this file or not!
@@ -89,10 +90,68 @@ public class UrlValidatorTest extends TestCase {
    
    public void testIsValid()
    {
-	   //You can use this function for programming based testing
+      UrlValidator urlVal = new UrlValidator();
+	  //You can use this function for programming based testing
+      //You can use this function for programming based testing
+      long randomseed = System.currentTimeMillis();
+      Random random = new Random (randomseed);
+      String toTest = "";
+      int inner, outer, choice, toggle;
+      boolean result;
+      boolean testType;
+      //String preArr[] = {"http://","https://","ftp://"};
+      ResultPair[] preArr = {new ResultPair("https://",true),new ResultPair("http://",true),new ResultPair("ftp://",true),new ResultPair("fgp://",false),new ResultPair("afl://",false)};
+      //String midArr[] = {"google","yahoo","oregon"};
+      ResultPair[] midArr = {new ResultPair("www.google.com",true),new ResultPair("google.com",true),new ResultPair("yahoo.com",true),new ResultPair("asdgasdg",false),new ResultPair("wrtfhum",false)};
+      //String postArr[] = {".com",".org",".gov"};
+      ResultPair[] postArr = {new ResultPair(":80",true),new ResultPair(":35",true),new ResultPair(":0",true),new ResultPair("-1",false),new ResultPair("-3608",false)};
+      //String pathArr[] = {"/test","/file","/123"};
+      ResultPair[] pathArr = {new ResultPair("/test",true),new ResultPair("/address",true),new ResultPair("/try/this/",true),new ResultPair("This shouldn't work",false),new ResultPair("~/totallysafe path",false)};
 
+
+
+      for(outer = 0; outer < 10; outer++){
+         choice = random.nextInt(2);
+         if(choice == 1)
+            testType = false;
+         else
+            testType = true;
+         toggle = 0;
+         while(toggle == 0){
+            choice = random.nextInt(5);
+            if(preArr[choice].valid == testType){
+               toTest = preArr[choice].item;
+               toggle = 1;
+            }
+         }
+         toggle = 0;
+         while(toggle == 0){
+            choice = random.nextInt(5);
+            if(midArr[choice].valid == testType){
+               toTest = toTest + midArr[choice].item;
+               toggle = 1;
+            }
+         }
+         toggle = 0;
+         while(toggle == 0){
+            choice = random.nextInt(5);
+            if(postArr[choice].valid == testType){
+               toTest = toTest + postArr[choice].item;
+               toggle = 1;
+            }
+         }
+         toggle = 0;
+         while(toggle == 0){
+            choice = random.nextInt(5);
+            if(pathArr[choice].valid == testType){
+               toTest = toTest + pathArr[choice].item;
+               toggle = 1;
+            }
+         }
+         System.out.println(toTest);
+         result = urlVal.isValid(toTest);
+         System.out.println(result);
+         //assertEquals(testType,result);
+      }
    }
-   
-
-
 }
